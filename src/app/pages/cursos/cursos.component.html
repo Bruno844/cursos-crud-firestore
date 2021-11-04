@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-end">
+            <a href="" class="btn btn-primary btn-lg mt-4" data-bs-toggle=""
+            data-bs-target="#exampleModal" (click)="agregarCurso()">Agregar Curso</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4" *ngFor="let curso of cursos">
+            <div class="card mt-2" style="width: 18rem;">
+                <img class="card-img-top" [src]="curso.imagen" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{curso.nombre}}</h5>
+                  <p class="card-text">{{curso.descripcion}}</p>
+                  <div class="row justify-content-center">
+                    <div class="col-6">
+                        <button class="btn btn-danger btn-lg btn-block" (click)="eliminarCurso(curso.id)">Eliminar</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-primary btn-lg btn-block">Editar</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
